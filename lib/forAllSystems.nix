@@ -9,10 +9,7 @@
   #         default.
   config ? {allowUnfree = true;},
 }: f: let
-  pkgsForSystem = system:
-    import nixpkgs {
-      inherit system config;
-    };
+  pkgsForSystem = import ./pkgsForSystem.nix {inherit nixpkgs config;};
 in
   nixpkgs.lib.genAttrs systems (system:
     f {
