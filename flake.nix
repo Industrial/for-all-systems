@@ -5,5 +5,7 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
   };
-  outputs = inputs @ {self, ...}: import ./lib/forAllSystems.nix;
+  outputs = inputs @ {self, ...}: {
+    forAllSystems = import ./lib/forAllSystems.nix;
+  };
 }
