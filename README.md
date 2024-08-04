@@ -8,7 +8,7 @@ A wrapper around `nixpkgs.lib.genAttrs` that passes the system and `pkgs` to the
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
-    for-all-systems.url = "github:Industrial/for-all-systems/v1.1.0";
+    for-all-systems.url = "github:Industrial/for-all-systems";
     for-all-systems.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = inputs @ {self, for-all-systems, ...}: let
