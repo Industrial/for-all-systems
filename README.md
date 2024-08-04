@@ -2,6 +2,8 @@
 
 A wrapper around `nixpkgs.lib.genAttrs` that passes the system and `pkgs` to the function you supply. This replaced [`flake-parts`](https://flake.parts) in my projects.
 
+## Usage
+
 ```nix
 {
   inputs = {
@@ -20,3 +22,17 @@ A wrapper around `nixpkgs.lib.genAttrs` that passes the system and `pkgs` to the
   };
 }
 ```
+
+## Options
+
+### `nixpkgs`
+
+The `nixpkgs` attribute set. Defaults to `import <nixpkgs> {}`.
+
+### `systems`
+
+An attribute set of systems to generate for. Defaults to `nixpkgs.lib.systems.flakeExposed`.
+
+### `config`
+
+The `config` argument to pass to the nixpkgs function. Defaults to `{ allowUnfree = true; }`.
